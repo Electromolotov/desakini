@@ -77,7 +77,12 @@ class DashboardBankPage extends StatelessWidget {
                       children: [
                         // Item Modul Desakini
                         ItemGridBank(Icons.attach_money_outlined, 'Top Up'),
-                        ItemGridBank(Icons.money_outlined, 'Transfer'),
+                        GestureDetector(
+                            onTap: () {
+                              Get.to(() => FormTransferBank());
+                            },
+                            child:
+                                ItemGridBank(Icons.money_outlined, 'Transfer')),
                         ItemGridBank(Icons.bolt_outlined, 'Listrik'),
                         ItemGridBank(Icons.water_outlined, 'Air'),
                         ItemGridBank(

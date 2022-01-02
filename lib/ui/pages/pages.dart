@@ -33,3 +33,4 @@ part 'upload_pic_product.dart';
 part 'success_regis_page.dart';
 part 'bank_page.dart';
 part 'dashboard_bank_page.dart';
+part 'form_transfer_bank_page.dart';
