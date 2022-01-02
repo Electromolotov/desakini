@@ -45,17 +45,70 @@ class DashboardBankPage extends StatelessWidget {
               ],
             ),
             const SizedBox(height: 25),
-            Text('Hei, Reza',
-                style:
-                    blackFontStyle1.copyWith(fontSize: 26, color: mainColor)),
-            const SizedBox(height: 25),
-            CreditCardWidget(
-                cardNumber: '',
-                expiryDate: '',
-                cardHolderName: '',
-                cvvCode: '',
-                showBackView: false,
-                onCreditCardWidgetChange: (CreditCardBrand creditCardBrand) {}),
+            Expanded(
+              child: ListView(
+                  shrinkWrap: true,
+                  physics: AlwaysScrollableScrollPhysics(),
+                  children: [
+                    Text('Hei, Reza',
+                        style: blackFontStyle1.copyWith(
+                            fontSize: 26, color: mainColor)),
+                    const SizedBox(height: 25),
+                    CreditCardWidget(
+                        cardNumber: '',
+                        expiryDate: '',
+                        cardHolderName: '',
+                        cvvCode: '',
+                        showBackView: false,
+                        onCreditCardWidgetChange:
+                            (CreditCardBrand creditCardBrand) {}),
+                    const SizedBox(height: 25),
+                    GridView(
+                      physics: const NeverScrollableScrollPhysics(),
+                      shrinkWrap: true,
+                      scrollDirection: Axis.vertical,
+                      gridDelegate:
+                          const SliverGridDelegateWithFixedCrossAxisCount(
+                        crossAxisCount: 4,
+                        crossAxisSpacing: 13,
+                        mainAxisSpacing: 12,
+                        childAspectRatio: 0.6,
+                      ),
+                      children: [
+                        // Item Modul Desakini
+                        ItemGridBank(Icons.attach_money_outlined, 'Top Up'),
+                        ItemGridBank(Icons.money_outlined, 'Transfer'),
+                        ItemGridBank(Icons.bolt_outlined, 'Listrik'),
+                        ItemGridBank(Icons.water_outlined, 'Air'),
+                        ItemGridBank(
+                            Icons.signal_cellular_alt_outlined, 'Pulsa'),
+                        ItemGridBank(Icons.wifi_outlined, 'Internet'),
+                        ItemGridBank(Icons.local_hospital_outlined, 'BPJS'),
+                      ],
+                    ),
+                    const SizedBox(height: 30),
+                    Text('Transaksi Terbaru',
+                        style: blackFontStyle1.copyWith(
+                          fontSize: 13,
+                        )),
+                    const SizedBox(height: 20),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Column(children: [
+                          Text('Transfer antar bank',
+                              style: blackFontStyle3.copyWith(fontSize: 15)),
+                          Text('12 Januari 2022 | 20:00 WIB',
+                              style: blackFontStyle3.copyWith(fontSize: 10)),
+                        ]),
+                        Text('Rp.150.000',
+                            style: blackFontStyle3.copyWith(fontSize: 15))
+                      ],
+                    ),
+                    const SizedBox(height: 5),
+                    Divider(height: 1, color: greyDotIndicator),
+                  ]),
+            ),
           ],
         ),
       )),

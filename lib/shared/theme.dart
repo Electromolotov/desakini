@@ -5,6 +5,7 @@ Color greyColor = "E5E5E5".toColor();
 Color greyDotIndicator = 'C4C4C4'.toColor();
 Color greyfontColor = 'DADADA'.toColor();
 Color greenColor = '5FF27F'.toColor();
+Color greyGrid = 'F2F2F2'.toColor();
 
 Widget loadingIndicator = SpinKitFadingCircle(
   size: 45,
