@@ -5,6 +5,10 @@ class UploadPicProduct extends StatelessWidget {
 
   final _scaffoldKey = GlobalKey<ScaffoldState>();
   TextEditingController _controller1 = TextEditingController();
+  TextEditingController _controller2 = TextEditingController();
+  TextEditingController _controller3 = TextEditingController();
+  TextEditingController _controller4 = TextEditingController();
+  TextEditingController _controller5 = TextEditingController();
 
   void _openEndDrawer() {
     _scaffoldKey.currentState!.openEndDrawer();
@@ -61,7 +65,7 @@ class UploadPicProduct extends StatelessWidget {
             ),
             const SizedBox(height: 15),
             TextFormField(
-              controller: _controller1,
+              controller: _controller2,
               decoration: InputDecoration(
                   labelText: 'Nama produk',
                   labelStyle:
@@ -74,7 +78,7 @@ class UploadPicProduct extends StatelessWidget {
             ),
             const SizedBox(height: 15),
             TextFormField(
-              controller: _controller1,
+              controller: _controller3,
               decoration: InputDecoration(
                   labelText: 'Harga',
                   labelStyle:
@@ -87,7 +91,7 @@ class UploadPicProduct extends StatelessWidget {
             ),
             const SizedBox(height: 15),
             TextFormField(
-              controller: _controller1,
+              controller: _controller4,
               decoration: InputDecoration(
                   labelText: 'Kategori',
                   labelStyle:
@@ -100,7 +104,7 @@ class UploadPicProduct extends StatelessWidget {
             ),
             const SizedBox(height: 15),
             TextFormField(
-              controller: _controller1,
+              controller: _controller5,
               decoration: InputDecoration(
                   labelText: 'Deskripsi',
                   labelStyle:

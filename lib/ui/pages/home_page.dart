@@ -494,7 +494,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                                       const Icon(Icons.search),
                                       Expanded(
                                         child: TextFormField(
-                                          controller: _controller1,
+                                          controller: _controller2,
                                           decoration: const InputDecoration(
                                               enabledBorder:
                                                   UnderlineInputBorder(

@@ -150,6 +150,10 @@ class FormRegisStore extends StatelessWidget {
 
   final _scaffoldKey = GlobalKey<ScaffoldState>();
   TextEditingController _controller1 = TextEditingController();
+  TextEditingController _controller2 = TextEditingController();
+  TextEditingController _controller3 = TextEditingController();
+  TextEditingController _controller4 = TextEditingController();
+  TextEditingController _controller5 = TextEditingController();
 
   void _openEndDrawer() {
     _scaffoldKey.currentState!.openEndDrawer();
@@ -207,7 +211,7 @@ class FormRegisStore extends StatelessWidget {
             ),
             const SizedBox(height: 15),
             TextFormField(
-              controller: _controller1,
+              controller: _controller2,
               decoration: InputDecoration(
                   labelText: 'NIK',
                   labelStyle:
@@ -220,7 +224,7 @@ class FormRegisStore extends StatelessWidget {
             ),
             const SizedBox(height: 15),
             TextFormField(
-              controller: _controller1,
+              controller: _controller3,
               decoration: InputDecoration(
                   labelText: 'Alamat',
                   labelStyle:
@@ -233,7 +237,7 @@ class FormRegisStore extends StatelessWidget {
             ),
             const SizedBox(height: 15),
             TextFormField(
-              controller: _controller1,
+              controller: _controller4,
               decoration: InputDecoration(
                   labelText: 'Pekerjaan',
                   labelStyle:
@@ -246,7 +250,7 @@ class FormRegisStore extends StatelessWidget {
             ),
             const SizedBox(height: 15),
             TextFormField(
-              controller: _controller1,
+              controller: _controller5,
               decoration: InputDecoration(
                   labelText: 'Nomor telp',
                   labelStyle:

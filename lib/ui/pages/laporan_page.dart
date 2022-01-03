@@ -256,7 +256,7 @@ class TulisLaporanPage extends StatelessWidget {
             ),
             const SizedBox(height: 15),
             TextFormField(
-              controller: _controller1,
+              controller: _controller2,
               decoration: InputDecoration(
                   labelText: 'Tulis laporan',
                   labelStyle:
