@@ -212,7 +212,10 @@ class NominalTransferBank extends StatelessWidget {
                     backgroundColor:
                         MaterialStateProperty.all<Color>(mainColor)),
                 onPressed: () {
-                  Get.to(() => DashboardBankPage());
+                  Get.to(() => SuccessBankPage(
+                        textSuccess:
+                            'DIAH SARI BANK BNI 0122xxxx\nRp.150.000\nPembayaran sewa alat',
+                      ));
                 },
               ),
             ),
