@@ -1,7 +1,7 @@
 part of 'pages.dart';
 
-class UploadIdentity extends StatelessWidget {
-  UploadIdentity({Key? key}) : super(key: key);
+class TagihanPage extends StatelessWidget {
+  TagihanPage({Key? key}) : super(key: key);
 
   final _scaffoldKey = GlobalKey<ScaffoldState>();
   TextEditingController _controller1 = TextEditingController();
@@ -44,50 +44,42 @@ class UploadIdentity extends StatelessWidget {
                     )),
               ],
             ),
-            const SizedBox(height: 30),
-            Text('Upload e-KTP untuk\nmelanjutkan',
-                style: blackFontStyle1.copyWith(fontSize: 26)),
-            const SizedBox(height: 35),
-            Center(
-              child: Image.asset('assets/cc-pic.png'),
+            const SizedBox(height: 45),
+            Text(
+              'Tagihan Listrik',
+              style: blackFontStyle1.copyWith(fontSize: 26),
             ),
-            const SizedBox(height: 10),
-            Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
-              GestureDetector(
-                onTap: () {},
-                child: Container(
-                  width: 153,
-                  height: 43,
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(30),
-                      color: Colors.white,
-                      border: Border.all(width: 1, color: mainColor)),
-                  child: Center(
-                    child: Text(
-                      'Galeri',
-                      style: blackFontStyle3.copyWith(
-                          fontSize: 15, color: mainColor),
-                    ),
-                  ),
-                ),
-              ),
-              Container(
-                width: 153,
-                height: 43,
+            const SizedBox(height: 20),
+            Text('Pembayaran tagihan listrik ',
+                style: blackFontStyle3.copyWith(fontSize: 13)),
+            const SizedBox(height: 30),
+            TextFormField(
+              controller: _controller1,
+              decoration: InputDecoration(
+                  labelText: 'Nomor pelanggan ',
+                  labelStyle:
+                      const TextStyle(color: Colors.black, fontSize: 13),
+                  hintText: 'Masukan nomor pelanggan',
+                  hintStyle: TextStyle(fontSize: 13, color: greyfontColor),
+                  enabledBorder: const UnderlineInputBorder(
+                    borderSide: BorderSide(color: Colors.black, width: 1),
+                  )),
+            ),
+            const SizedBox(height: 40),
+            Container(
+                width: 331,
+                height: 63,
                 decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(30),
-                    color: Colors.white,
-                    border: Border.all(width: 1, color: mainColor)),
+                    color: mainColor, borderRadius: BorderRadius.circular(10)),
                 child: Center(
-                  child: Text(
-                    'Kamera',
-                    style: blackFontStyle3.copyWith(
-                        fontSize: 15, color: mainColor),
+                  child: Padding(
+                    padding: const EdgeInsets.only(left: 15),
+                    child: Text(
+                        'Masukan nomor pelanggan anda untuk mengetahui jumlah tagihan.',
+                        style: blackFontStyle3.copyWith(fontSize: 13)),
                   ),
-                ),
-              ),
-            ]),
-            const SizedBox(height: 150),
+                )),
+            const SizedBox(height: 100),
             ConstrainedBox(
               constraints:
                   const BoxConstraints.tightFor(width: 313, height: 52),
@@ -95,15 +87,15 @@ class UploadIdentity extends StatelessWidget {
                 child: Center(
                     child: Text('Lanjutkan',
                         style: blackFontStyle3.copyWith(
-                            fontSize: 15, color: Colors.white))),
+                            fontSize: 15, color: mainColor))),
                 style: ButtonStyle(
                     shape: MaterialStateProperty.all(RoundedRectangleBorder(
-                        side: BorderSide(width: 1, color: greyDotIndicator),
+                        side: BorderSide(width: 1, color: mainColor),
                         borderRadius: BorderRadius.circular(50))),
                     backgroundColor:
-                        MaterialStateProperty.all<Color>(mainColor)),
+                        MaterialStateProperty.all<Color>(Colors.white)),
                 onPressed: () {
-                  Get.to(() => UploadPicProduct());
+                  Get.to(() => FormTagihanBank());
                 },
               ),
             ),

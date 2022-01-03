@@ -1,7 +1,7 @@
 part of 'pages.dart';
 
-class UploadPicProduct extends StatelessWidget {
-  UploadPicProduct({Key? key}) : super(key: key);
+class FormRegisStore extends StatelessWidget {
+  FormRegisStore({Key? key}) : super(key: key);
 
   final _scaffoldKey = GlobalKey<ScaffoldState>();
   TextEditingController _controller1 = TextEditingController();
@@ -50,17 +50,18 @@ class UploadPicProduct extends StatelessWidget {
                 ],
               ),
               const SizedBox(height: 30),
-              Text('Upload produk yang akan\nanda jual',
+              Text('Yuk, lengkapi data\ndiri untuk pendaftaran',
                   style: blackFontStyle1.copyWith(fontSize: 26)),
               const SizedBox(height: 25),
               TextFormField(
                 controller: _controller1,
-                decoration: const InputDecoration(
-                    labelText: 'Upload gambar',
-                    labelStyle: TextStyle(color: Colors.black, fontSize: 13),
-                    // hintText: 'Masukan nama produk',
-                    // hintStyle: TextStyle(fontSize: 13, color: greyfontColor),
-                    enabledBorder: UnderlineInputBorder(
+                decoration: InputDecoration(
+                    labelText: 'Nama',
+                    labelStyle:
+                        const TextStyle(color: Colors.black, fontSize: 13),
+                    hintText: 'Nama lengkap',
+                    hintStyle: TextStyle(fontSize: 13, color: greyfontColor),
+                    enabledBorder: const UnderlineInputBorder(
                       borderSide: BorderSide(color: Colors.black, width: 1),
                     )),
               ),
@@ -68,10 +69,10 @@ class UploadPicProduct extends StatelessWidget {
               TextFormField(
                 controller: _controller2,
                 decoration: InputDecoration(
-                    labelText: 'Nama produk',
+                    labelText: 'NIK',
                     labelStyle:
                         const TextStyle(color: Colors.black, fontSize: 13),
-                    hintText: 'Masukan nama produk',
+                    hintText: 'Nomor Induk Kependudukan',
                     hintStyle: TextStyle(fontSize: 13, color: greyfontColor),
                     enabledBorder: const UnderlineInputBorder(
                       borderSide: BorderSide(color: Colors.black, width: 1),
@@ -81,10 +82,10 @@ class UploadPicProduct extends StatelessWidget {
               TextFormField(
                 controller: _controller3,
                 decoration: InputDecoration(
-                    labelText: 'Harga',
+                    labelText: 'Alamat',
                     labelStyle:
                         const TextStyle(color: Colors.black, fontSize: 13),
-                    hintText: 'Harga produk',
+                    hintText: 'Alamat lengkap',
                     hintStyle: TextStyle(fontSize: 13, color: greyfontColor),
                     enabledBorder: const UnderlineInputBorder(
                       borderSide: BorderSide(color: Colors.black, width: 1),
@@ -94,10 +95,10 @@ class UploadPicProduct extends StatelessWidget {
               TextFormField(
                 controller: _controller4,
                 decoration: InputDecoration(
-                    labelText: 'Kategori',
+                    labelText: 'Pekerjaan',
                     labelStyle:
                         const TextStyle(color: Colors.black, fontSize: 13),
-                    hintText: 'Pilih kategori produk',
+                    hintText: 'Masukan informasi pekerjaan',
                     hintStyle: TextStyle(fontSize: 13, color: greyfontColor),
                     enabledBorder: const UnderlineInputBorder(
                       borderSide: BorderSide(color: Colors.black, width: 1),
@@ -107,10 +108,10 @@ class UploadPicProduct extends StatelessWidget {
               TextFormField(
                 controller: _controller5,
                 decoration: InputDecoration(
-                    labelText: 'Deskripsi',
+                    labelText: 'Nomor telp',
                     labelStyle:
                         const TextStyle(color: Colors.black, fontSize: 13),
-                    hintText: 'Informasi detail produk',
+                    hintText: 'Nomor telepon atau nomor ponsel',
                     hintStyle: TextStyle(fontSize: 13, color: greyfontColor),
                     enabledBorder: const UnderlineInputBorder(
                       borderSide: BorderSide(color: Colors.black, width: 1),
@@ -132,7 +133,7 @@ class UploadPicProduct extends StatelessWidget {
                       backgroundColor:
                           MaterialStateProperty.all<Color>(mainColor)),
                   onPressed: () {
-                    Get.to(() => SuccessRegisStorePage());
+                    Get.to(() => UploadIdentity());
                   },
                 ),
               ),

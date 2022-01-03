@@ -1,7 +1,7 @@
 part of 'pages.dart';
 
-class SuccessRegisPage extends StatelessWidget {
-  SuccessRegisPage({Key? key}) : super(key: key);
+class SuccessRegisStorePage extends StatelessWidget {
+  SuccessRegisStorePage({Key? key}) : super(key: key);
 
   final _scaffoldKey = GlobalKey<ScaffoldState>();
   TextEditingController _controller1 = TextEditingController();

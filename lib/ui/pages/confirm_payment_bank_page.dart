@@ -1,7 +1,7 @@
 part of 'pages.dart';
 
-class UploadIdentity extends StatelessWidget {
-  UploadIdentity({Key? key}) : super(key: key);
+class ConfirmPaymentBankPage extends StatelessWidget {
+  ConfirmPaymentBankPage({Key? key}) : super(key: key);
 
   final _scaffoldKey = GlobalKey<ScaffoldState>();
   TextEditingController _controller1 = TextEditingController();
@@ -9,6 +9,8 @@ class UploadIdentity extends StatelessWidget {
   void _openEndDrawer() {
     _scaffoldKey.currentState!.openEndDrawer();
   }
+
+  PaymentMethod _value = PaymentMethod.virtualAccount;
 
   @override
   Widget build(BuildContext context) {
@@ -44,56 +46,42 @@ class UploadIdentity extends StatelessWidget {
                     )),
               ],
             ),
-            const SizedBox(height: 30),
-            Text('Upload e-KTP untuk\nmelanjutkan',
-                style: blackFontStyle1.copyWith(fontSize: 26)),
-            const SizedBox(height: 35),
-            Center(
-              child: Image.asset('assets/cc-pic.png'),
+            const SizedBox(height: 25),
+            Text(
+              'Pembayaran',
+              style: blackFontStyle1.copyWith(fontSize: 26),
             ),
             const SizedBox(height: 10),
-            Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
-              GestureDetector(
-                onTap: () {},
-                child: Container(
-                  width: 153,
-                  height: 43,
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(30),
-                      color: Colors.white,
-                      border: Border.all(width: 1, color: mainColor)),
-                  child: Center(
-                    child: Text(
-                      'Galeri',
-                      style: blackFontStyle3.copyWith(
-                          fontSize: 15, color: mainColor),
-                    ),
-                  ),
-                ),
-              ),
-              Container(
-                width: 153,
-                height: 43,
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(30),
-                    color: Colors.white,
-                    border: Border.all(width: 1, color: mainColor)),
-                child: Center(
-                  child: Text(
-                    'Kamera',
-                    style: blackFontStyle3.copyWith(
-                        fontSize: 15, color: mainColor),
-                  ),
-                ),
-              ),
-            ]),
-            const SizedBox(height: 150),
+            Text(
+                'Pilih metode pembayaran anda untuk melanjutkan proses pembayaran tagihan.',
+                style: blackFontStyle3.copyWith(fontSize: 13)),
+            const SizedBox(height: 50),
+            Text('Metode Pembayaran',
+                style: blackFontStyle1.copyWith(fontSize: 13)),
+            ListTile(
+              title: const Text('Virtual Account'),
+              leading: Radio(
+                  activeColor: mainColor,
+                  value: PaymentMethod.virtualAccount,
+                  groupValue: _value,
+                  onChanged: (PaymentMethod? value) {
+                    _value = value!;
+                  }),
+            ),
+            const SizedBox(height: 10),
+            const Divider(height: 1),
+            const SizedBox(height: 50),
+            Text('Total Pembayaran',
+                style: blackFontStyle1.copyWith(fontSize: 13)),
+            const SizedBox(height: 5),
+            Text('Rp.344.000', style: blackFontStyle3.copyWith(fontSize: 13)),
+            const SizedBox(height: 200),
             ConstrainedBox(
               constraints:
                   const BoxConstraints.tightFor(width: 313, height: 52),
               child: ElevatedButton(
                 child: Center(
-                    child: Text('Lanjutkan',
+                    child: Text('Pesan',
                         style: blackFontStyle3.copyWith(
                             fontSize: 15, color: Colors.white))),
                 style: ButtonStyle(
@@ -103,7 +91,10 @@ class UploadIdentity extends StatelessWidget {
                     backgroundColor:
                         MaterialStateProperty.all<Color>(mainColor)),
                 onPressed: () {
-                  Get.to(() => UploadPicProduct());
+                  Get.to(() => SuccessBankPage(
+                        textSuccess:
+                            'DIAH SARI BANK BNI 0122xxxx\nRp.150.000\nPembayaran sewa alat',
+                      ));
                 },
               ),
             ),

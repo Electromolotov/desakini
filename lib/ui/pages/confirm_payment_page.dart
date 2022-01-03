@@ -92,9 +92,7 @@ class ConfirmPaymentPage extends StatelessWidget {
                         borderRadius: BorderRadius.circular(50))),
                     backgroundColor:
                         MaterialStateProperty.all<Color>(mainColor)),
-                onPressed: () {
-                  Get.to(() => ConfirmPaymentPage());
-                },
+                onPressed: () {},
               ),
             ),
           ],

@@ -83,7 +83,12 @@ class DashboardBankPage extends StatelessWidget {
                             },
                             child:
                                 ItemGridBank(Icons.money_outlined, 'Transfer')),
-                        ItemGridBank(Icons.bolt_outlined, 'Listrik'),
+                        GestureDetector(
+                            onTap: () {
+                              Get.to(() => TagihanPage());
+                            },
+                            child:
+                                ItemGridBank(Icons.bolt_outlined, 'Listrik')),
                         ItemGridBank(Icons.water_outlined, 'Air'),
                         ItemGridBank(
                             Icons.signal_cellular_alt_outlined, 'Pulsa'),

@@ -1,10 +1,11 @@
 part of 'pages.dart';
 
-class UploadIdentity extends StatelessWidget {
-  UploadIdentity({Key? key}) : super(key: key);
+class TulisLaporanPage extends StatelessWidget {
+  TulisLaporanPage({Key? key}) : super(key: key);
 
   final _scaffoldKey = GlobalKey<ScaffoldState>();
   TextEditingController _controller1 = TextEditingController();
+  TextEditingController _controller2 = TextEditingController();
 
   void _openEndDrawer() {
     _scaffoldKey.currentState!.openEndDrawer();
@@ -28,7 +29,7 @@ class UploadIdentity extends StatelessWidget {
               children: [
                 GestureDetector(
                     onTap: () {
-                      Get.back();
+                      Get.offAll(() => HomePage());
                     },
                     child: Icon(Icons.arrow_back, color: mainColor)),
                 Text(
@@ -44,17 +45,46 @@ class UploadIdentity extends StatelessWidget {
                     )),
               ],
             ),
-            const SizedBox(height: 30),
-            Text('Upload e-KTP untuk\nmelanjutkan',
-                style: blackFontStyle1.copyWith(fontSize: 26)),
-            const SizedBox(height: 35),
-            Center(
-              child: Image.asset('assets/cc-pic.png'),
+            const SizedBox(height: 45),
+            Text(
+              'Laporan',
+              style: blackFontStyle1.copyWith(fontSize: 26),
             ),
-            const SizedBox(height: 10),
+            const SizedBox(height: 20),
+            Text(
+                'Ajukan Laporan maupun Saran/Kritik/Ide anda ke Pemdes untuk keamanan dan kemajuan desa agar lebih baik',
+                style: blackFontStyle3.copyWith(fontSize: 15)),
+            const SizedBox(height: 20),
+            TextFormField(
+              controller: _controller1,
+              decoration: InputDecoration(
+                  labelText: 'Judul laporan',
+                  labelStyle: TextStyle(color: Colors.black, fontSize: 13),
+                  hintText: 'Masukan judul laporan',
+                  hintStyle: TextStyle(fontSize: 13, color: greyfontColor),
+                  enabledBorder: UnderlineInputBorder(
+                    borderSide: BorderSide(color: Colors.black, width: 1),
+                  )),
+            ),
+            const SizedBox(height: 15),
+            TextFormField(
+              controller: _controller2,
+              decoration: InputDecoration(
+                  labelText: 'Tulis laporan',
+                  labelStyle:
+                      const TextStyle(color: Colors.black, fontSize: 13),
+                  hintText: 'Masukan laporan anda',
+                  hintStyle: TextStyle(fontSize: 13, color: greyfontColor),
+                  enabledBorder: const UnderlineInputBorder(
+                    borderSide: BorderSide(color: Colors.black, width: 1),
+                  )),
+            ),
+            const SizedBox(height: 45),
             Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
               GestureDetector(
-                onTap: () {},
+                onTap: () {
+                  Get.to(() => StatusLaporan());
+                },
                 child: Container(
                   width: 153,
                   height: 43,
@@ -64,7 +94,7 @@ class UploadIdentity extends StatelessWidget {
                       border: Border.all(width: 1, color: mainColor)),
                   child: Center(
                     child: Text(
-                      'Galeri',
+                      'Lihat laporan',
                       style: blackFontStyle3.copyWith(
                           fontSize: 15, color: mainColor),
                     ),
@@ -80,33 +110,13 @@ class UploadIdentity extends StatelessWidget {
                     border: Border.all(width: 1, color: mainColor)),
                 child: Center(
                   child: Text(
-                    'Kamera',
+                    'Kirim',
                     style: blackFontStyle3.copyWith(
                         fontSize: 15, color: mainColor),
                   ),
                 ),
               ),
-            ]),
-            const SizedBox(height: 150),
-            ConstrainedBox(
-              constraints:
-                  const BoxConstraints.tightFor(width: 313, height: 52),
-              child: ElevatedButton(
-                child: Center(
-                    child: Text('Lanjutkan',
-                        style: blackFontStyle3.copyWith(
-                            fontSize: 15, color: Colors.white))),
-                style: ButtonStyle(
-                    shape: MaterialStateProperty.all(RoundedRectangleBorder(
-                        side: BorderSide(width: 1, color: greyDotIndicator),
-                        borderRadius: BorderRadius.circular(50))),
-                    backgroundColor:
-                        MaterialStateProperty.all<Color>(mainColor)),
-                onPressed: () {
-                  Get.to(() => UploadPicProduct());
-                },
-              ),
-            ),
+            ])
           ],
         ),
       )),
