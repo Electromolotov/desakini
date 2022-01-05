@@ -85,7 +85,7 @@ class DashboardBankPage extends StatelessWidget {
                                 ItemGridBank(Icons.money_outlined, 'Transfer')),
                         GestureDetector(
                             onTap: () {
-                              Get.to(() => TagihanPage());
+                              Get.to(() => TagihanListrikPage());
                             },
                             child:
                                 ItemGridBank(Icons.bolt_outlined, 'Listrik')),

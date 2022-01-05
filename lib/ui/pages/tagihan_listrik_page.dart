@@ -1,7 +1,7 @@
 part of 'pages.dart';
 
-class TagihanPage extends StatelessWidget {
-  TagihanPage({Key? key}) : super(key: key);
+class TagihanListrikPage extends StatelessWidget {
+  TagihanListrikPage({Key? key}) : super(key: key);
 
   final _scaffoldKey = GlobalKey<ScaffoldState>();
   TextEditingController _controller1 = TextEditingController();
