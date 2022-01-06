@@ -43,3 +43,4 @@ part 'status_laporan_page.dart';
 part 'form_regis_store_page.dart';
 part 'form_tagihan_bank_listrik_page.dart';
 part 'confirm_payment_bank_page.dart';
+part 'tagihan_pulsa_page.dart';

@@ -93,7 +93,7 @@ class ConfirmPaymentBankPage extends StatelessWidget {
                 onPressed: () {
                   Get.to(() => SuccessBankPage(
                         textSuccess:
-                            'DIAH SARI BANK BNI 0122xxxx\nRp.150.000\nPembayaran sewa alat',
+                            'DIAH SARI BANK BNI 0122xxxx\nRp.150.000\nNovember 2021',
                       ));
                 },
               ),
